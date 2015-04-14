@@ -1,0 +1,68 @@
+/**
+ * Name: 林明毅
+ * ID: U10316024
+ * EX: 11.10
+ */ 
+import java.util.Scanner;
+//MyStack extends ArrayList<Object>
+class MyStack extends java.util.ArrayList<Object> {
+
+	//boolean method
+	public boolean isEmpty() {
+		return super.isEmpty();
+	}
+
+	//get method
+	public int getSize() {
+		return super.size();
+	}
+
+	//peek method
+	public Object peek() {
+		return super.get(getSize() - 1);
+	}
+
+	//pop method
+	public Object pop() {
+		Object o = super.get(getSize() - 1);
+		super.remove(getSize() - 1);
+		return o;
+	}
+
+	//push method
+	public void push(Object o) {
+		super.add(o);
+		
+	}	
+
+	//toString method
+	@Override
+	public String toString() {
+		return "Stack: " + super.toString();
+	}
+}
+
+public class stack {
+
+	//main method
+	public static void main(String[] args){
+
+		//Users input five strings
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please input five strings: ");
+
+		//create a stack
+		MyStack stack = new MyStack();
+
+		//for loop to input five strings and put in ArrayList
+		for (int i = 0;i < 5;i++) {
+			stack.push(input.nextLine());
+		}
+
+		//print result
+		System.out.println("\n" + stack.getSize() + " strings are: ");
+		while (!stack.isEmpty()) {
+			System.out.println(stack.pop());
+		}
+	}
+}
