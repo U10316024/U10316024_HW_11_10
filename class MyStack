@@ -1,0 +1,36 @@
+class MyStack extends java.util.ArrayList<Object> {
+
+	//boolean method
+	public boolean isEmpty() {
+		return super.isEmpty();
+	}
+
+	//get method
+	public int getSize() {
+		return super.size();
+	}
+
+	//peek method
+	public Object peek() {
+		return super.get(getSize() - 1);
+	}
+
+	//pop method
+	public Object pop() {
+		Object o = super.get(getSize() - 1);
+		super.remove(getSize() - 1);
+		return o;
+	}
+
+	//push method
+	public void push(Object o) {
+		super.add(o);
+		
+	}	
+
+	//toString method
+	@Override
+	public String toString() {
+		return "Stack: " + super.toString();
+	}
+}
