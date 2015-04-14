@@ -1,0 +1,24 @@
+public class stack {
+
+	//main method
+	public static void main(String[] args){
+
+		//Users input five strings
+		Scanner input = new Scanner(System.in);
+		System.out.println("Please input five strings: ");
+
+		//create a stack
+		MyStack stack = new MyStack();
+
+		//for loop to input five strings and put in ArrayList
+		for (int i = 0;i < 5;i++) {
+			stack.push(input.nextLine());
+		}
+
+		//print result
+		System.out.println("\n" + stack.getSize() + " strings are: ");
+		while (!stack.isEmpty()) {
+			System.out.println(stack.pop());
+		}
+	}
+}
